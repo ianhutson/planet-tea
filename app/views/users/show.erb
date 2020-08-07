@@ -1,0 +1,11 @@
+<p> Here are your reviews, <%= @user.username %>
+<% @user.reviews.each do |review| %>
+  <div>
+    <%= review.name %>
+    <%= review.supplier %>
+    <%= review.country %>
+    <%= review.color %>
+    <%= review.flavor %>
+    <%= review.type %>
+  </div>
+<% end %>

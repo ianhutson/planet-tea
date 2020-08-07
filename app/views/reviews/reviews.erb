@@ -1,0 +1,13 @@
+<p> Welcome, <%= current_user.username %>
+<h2> Reviews </h2>
+
+<% @reviews.each do |reviews| %>
+    <div>
+    <%= reviews.name %>
+    <%= reviews.supplier %>
+    <%= reviews.country %>
+    <%= reviews.color %>
+    <%= reviews.flavor %>
+    <%= reviews.type %>
+  </div>
+<% end %>
