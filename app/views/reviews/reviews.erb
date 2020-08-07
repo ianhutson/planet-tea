@@ -4,10 +4,12 @@
 <% @reviews.each do |reviews| %>
     <div>
     <%= reviews.name %>
+    <%= reviews.tea_type %>
     <%= reviews.supplier %>
     <%= reviews.country %>
-    <%= reviews.color %>
     <%= reviews.flavor %>
-    <%= reviews.type %>
+    <%= reviews.color %>
+    <%= reviews.notes %>
   </div>
+  
 <% end %>

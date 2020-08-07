@@ -1,4 +1,6 @@
-<p><%= @review.name %>
+<p><%= @review.name %> - <%=@review.tea_type%> - <%=@review.supplier%> - <%=@review.country%></p>
+<p>Flavor: <%=@review.flavor%> - Color: <%=@review.color%></p>
+<p>Notes:  <%=@review.notes%>
 
 <form method="post" action="/reviews/<%=@review.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">

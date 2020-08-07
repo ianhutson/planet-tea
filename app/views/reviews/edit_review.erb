@@ -2,6 +2,12 @@
 
 <form method="post" action="/reviews/<%=@review.id%>">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
-  <input type="text" name="content" value="<%= @review.content %>">
+  <input type="text" name="name" value="<%= @review.name %>">
+  <input type="text" name="tea_type" value="<%= @review.tea_type %>">
+  <input type="text" name="supplier" value="<%= @review.supplier %>">
+  <input type="text" name="country" value="<%= @review.country %>">
+  <input type="text" name="flavor" value="<%= @review.flavor %>">
+  <input type="text" name="color" value="<%= @review.color %>">
+  <input type="text" name="notes" value="<%= @review.notes %>">
   <input type="submit" value="submit">
 </form>
