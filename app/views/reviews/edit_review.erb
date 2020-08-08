@@ -10,4 +10,12 @@
   <input type="text" name="color" value="<%= @review.color %>">
   <input type="text" name="notes" value="<%= @review.notes %>">
   <input type="submit" value="submit">
+  
+</form>
+<form method="post" action="/reviews/<%=@review.id%>/delete">
+<button type="submit" name="_method" class="button" value="delete">Delete Review</button>
+</form>
+
+<form method="get" action="/reviews">
+<button type="submit" class="button">All Reviews</button>
 </form>

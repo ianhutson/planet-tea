@@ -3,7 +3,7 @@
 <p>Notes:  <%=@review.notes%>
 
 <form method="post" action="/reviews/<%=@review.id%>/delete">
-<button type="submit" class="button">Delete Review</button>
+<button type="submit" name="_method" class="button" value="delete">Delete Review</button>
 </form>
 
 <form method="get" action="/reviews/<%=@review.id%>/edit">
