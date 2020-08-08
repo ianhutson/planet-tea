@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
     get '/reviews' do
       if logged_in?
-        @reviews = Review.all
+        @reviews = current_user.reviews.all
         erb :'reviews/reviews'
       else
         redirect to '/login'

@@ -1,15 +1,31 @@
-<h2>Welcome to Planet Tea!</h2>
+<h2>Planet Tea</h2>
+<% if logged_in? %>
 
+  <p>Welcome, <%=current_user.username %>!</p>
+  <form method="get" action="/reviews/new">
+<button type="submit" class="button">Create Review</button>
+  </form>
 
-<nav>
-  <% if logged_in? %>
-
-    <a href="/reviews/new"> Create Review </a>
-    <a href="/logout"> Log Out </a>
-    <p>Welcome, <%=current_user.username %></p>
+  <form method="get" action="/reviews">
+<button type="submit" class="button">View Reviews</button>
+  </form>
 
   <% else %>
-  <p>Please signin or signup below:</p>
-    <a href="/signup">Sign Up</a>
-    <a href="/login"> Sign In </a>
+  <p>Please Login or Sign Up below:</p>
+  <h3>Login</h3>
+  <form method="post" action="/login">
+  Username: <input type="text" name="username" >
+  <br>
+  Password: <input type="text" name="password">
+  <br>
+  <input class="button" text="Login" type="submit" value="Submit">
+  </form>
+
+  <h4>Sign Up</h4>
+  <form action="/signup" method="POST">
+  <p>Name: <input type="text" name="username"></p>
+  <p>Email: <input type="text" name="email"></p>
+  <p>Password: <input type="text" name="password"></p>
+   <input class="button" text="Sign Up" type="submit" value="Submit">
+</form>
   <%end %>

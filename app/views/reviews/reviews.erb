@@ -1,15 +1,20 @@
-<p> Welcome, <%= current_user.username %>
+<p> Welcome, <%= current_user.username %>!
 <h2> Reviews </h2>
-
+<% if current_user.reviews.all.length == 0%>
+No Reviews!  
+<form method="get" action="/reviews/new">
+<button type="submit" class="button">Create Review</button>
+  </form>
+  <% else %>
 <% @reviews.each do |reviews| %>
     <div>
-    <%= reviews.name %>
-    <%= reviews.tea_type %>
-    <%= reviews.supplier %>
-    <%= reviews.country %>
-    <%= reviews.flavor %>
-    <%= reviews.color %>
-    <%= reviews.notes %>
+    <a href="/reviews/<%= reviews.id%>">
+    <%= reviews.name %> <form method="post" action="/reviews/<%=@reviews.id%>/delete">
+<button type="submit" class="button">Delete</button>
+</form>>
+   
   </div>
-  
 <% end %>
+<% end %>
+
+
