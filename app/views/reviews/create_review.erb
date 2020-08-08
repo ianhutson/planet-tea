@@ -1,3 +1,4 @@
+<div class="container">
 <h2>Add a review:</h2>
 <form action="/reviews" method="POST">
   <label for="name">Name: </label>
@@ -26,12 +27,14 @@
   <br>
   <label for="notes">Additional Notes: </label>
   <br>
-  <input type="text" name="notes">
+  <textarea type="text" name="notes" rows="14" cols="22" wrap="soft" maxlength="1000"></textarea>
+  <br>
   <br>
   <input class="button" type="submit" value="Submit">
 </form>
-
+<br><br>
 <form method="get" action="/reviews">
 <button type="submit" class="button">All Reviews</button>
 </form>
 
+</div>

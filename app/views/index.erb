@@ -1,3 +1,4 @@
+<div class="container">
 <% if logged_in? %>
 
   <p>Welcome, <%=current_user.username %>!</p>
@@ -5,29 +6,49 @@
   <form method="get" action="/reviews/new">
 <button type="submit" class="button">Create Review</button>
   </form>
-
+<br>
+<br>
   <form method="get" action="/reviews">
 <button type="submit" class="button">View Reviews</button>
   </form>
 
   <% else %>
-  <p>Welcome to Planet Tea! Please Login or Sign Up below:</p>
-  <h3>Log In</h3>
-  <form method="post" action="/login">
-  Username: <input type="text" name="username" maxlength="20" >
+  <h2>Welcome to Planet Tea!<h2> 
+  <h1>Please Login or Sign Up below:</h1>
   <br>
-  Password: <input type="password" name="password">
+  <h3>Log In:</h3>
+  
+  <form method="post" action="/login">
+  <label for="name">Username: </label>
+  <br>
+  <input type="text" name="name" maxlength="15">
+  <br>
+   <label for="password">Password: </label>
+  <br>
+  <input type="password" name="password" minlength="6">
+  <br>
   <br>
   <input class="button" text="Login" type="submit" value="Log In">
+  
   </form>
-
-  <h3>Sign Up</h3>
+<br><br>
+  <h3>Sign Up:</h3>
   <form action="/signup" method="POST">
-  <h5>Username must only contain letters (either case), numbers, and underscore; Between 6 and 15 characters.</h5>
-  <p>Username: <input name="username" id="username" pattern="[A-Za-z0-9_]{6,15}"></p>
-  <p>Email:  <input type="email" id="email" name="email"
-  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-  <p>Password: <input type="password" name="password" minlength="6" required></p>
+  <p>Username must only contain letters (either case), numbers, and underscore; Between 6 and 15 characters.</p>
+  <label for="name">Username: </label>
+  <br>
+  <input name="username" id="username" pattern="[A-Za-z0-9_]{6,15}" required>
+  <br>
+  <label for="email">Email: </label>
+  <br>
+  <input type="email" id="email" name="email"
+  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+  <br>
+   <label for="password">Password: </label>
+  <br>
+ <input type="password" name="password" minlength="6" required>
+  <br><br>
    <input class="button" text="Sign Up" type="submit" value="Sign Up" >
 </form>
   <%end %>
+</div>

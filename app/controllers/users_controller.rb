@@ -52,26 +52,27 @@ class UsersController < ApplicationController
       end
     end
   
-    patch '/reviews/:id' do
+    patch '/users/:id' do
       if logged_in?
         if params[:name] == ""
-          redirect to "/reviews/#{params[:id]}/edit"
+          redirect to "/users/#{params[:id]}/edit"
         else
-          @review = Review.find_by_id(params[:id])
-          if @review && @review.user == current_user
-            if @review.update(name: params[:name])
-              redirect to "/reviews/#{@review.id}"
+          @user = User.find_by_id(params[:id])
+          if @user == current_user && params[:password] == params[:confirm_password]
+            if @user.update(password: params[:password]) 
+              redirect to "/users/#{@user.id}"
             else
-              redirect to "/reviews/#{@review.id}/edit"
+              redirect to "/users/#{@user.id}/edit"
             end
           else
-            redirect to '/reviews'
+            redirect to '/users'
           end
         end
       else
         redirect to '/login'
       end
     end
+
     get '/logout' do
       if logged_in?
         session.destroy

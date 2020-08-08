@@ -1,10 +1,14 @@
+<div class="container">
 <h2><%= current_user.username %>'s Reviews: </h2>
+<br>
 <% if current_user.reviews.all.length == 0%>
 No Reviews!  
+<br>
   <% else %>
 <% @reviews.each do |reviews| %>
     <div>
     <a href="/reviews/<%= reviews.id%>" class="button"><%= reviews.name %></a>
+    <br>
     </div>
 
 <% end %>
@@ -13,4 +17,4 @@ No Reviews!
  <form method="get" action="/reviews/new">
 <button type="submit" class="button">Create Review</button>
   </form>
-
+</div>

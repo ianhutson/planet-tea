@@ -7,18 +7,21 @@
 
 <body>
 <div class="topnav">
+<% if logged_in?%>
+
 <form class="left" method="get" action="/">
 <button type="submit" class="button">Home</button>
 </form>
+
 <form class="left" method="get" action="/users/<%=current_user.id%>/edit">
-<button type="submit" class="button">Profile</button>
+<button type="submit" class="profile">Profile</button>
 </form>
 
-<form class="right" action="/logout" method="get">
+<form style="margin-right:.25%"class="right" action="/logout" method="get">
   <button class="button" name="logout">Logout</button>
 </form>
-
-<div style="text-align:center;width:100%;font-size:23px;padding-top:0;padding-bottom:0">Planet Tea</div>
+<%end%>
+<div style="text-align:center;width:100%;font-size:23px;padding-top:0;padding-bottom:0;padding-right:5%">Planet Tea</div>
 
 </div>
 <br>

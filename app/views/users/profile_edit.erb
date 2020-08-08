@@ -1,11 +1,26 @@
-<h2> Edit Profile </h2>
+<div class="container">
+<h2>Edit Profile:</h2>
 
-<form method="post" action="/profile/<%=@profile.id%>">
+<form method="post" action="/user/<%=current_user.id%>/edit">
 <label for="password">New Password: </label>
   <br>
-  <input type="text" name="password">
+  <input type="password" name="password" minlength="6" required>
   <br>
+  <label for="confirm_password">Confirm Password: </label>
+  <br>
+  <input type="password" name="confirm_password" minlength="6" value="<%= @user.password %>"required >
+  <br><br>
+   <input class="button" type="submit" value="Change Password" required>
+   </form><br>
+   <%# <form method="post" action="/user/profile_edit">
+   <br>
   <label for="email">New Email: </label>
   <br>
-  <input type="text" name="email">
+  <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
   <br>
+  <label for="email">Confirm Email: </label>
+  <br>
+  <input type="text" name="confirm_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+  <br><br><input class="button" type="submit" value="Change Email">
+   </form> %>
+</div>

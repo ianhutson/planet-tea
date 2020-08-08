@@ -1,3 +1,4 @@
+<div class="container">
 <h2> Edit Review </h2>
 
 <form method="post" action="/reviews/<%=@review.id%>">
@@ -28,15 +29,17 @@
   <br>
   <label for="notes">Additional Notes: </label>
   <br>
-  <input type="text" name="notes" value="<%= @review.notes %>">
+ <textarea type="text" name="notes" rows="14" cols="22" wrap="soft" maxlength="1000" value="<%= @review.notes %>"></textarea>
   <br>
   <br>
   <input class="button" type="submit" value="Submit">
   <br>
-</form>
+</form><br>
 <form method="post" action="/reviews/<%=@review.id%>/delete">
 <button type="submit" name="_method" class="button" value="delete">Delete Review</button>
 </form>
+
 <form method="get" action="/reviews">
 <button type="submit" class="button">All Reviews</button>
 </form>
+</div>

@@ -10,6 +10,7 @@ body {
     color: white;
     overflow-x: hidden;
     font-family: 'roobertregular';
+    font-weight: normal;
 }
 
 .topnav {
@@ -19,6 +20,7 @@ body {
     height: 20p;
     background-color: #606060;
     font-family: 'roobertregular';
+    font-weight: bold;
 }
 
 .left {
@@ -46,9 +48,23 @@ body {
     font-family: 'roobertregular';
     border: 1px solid white;
     text-align: center;
-    margin: auto;
-    padding-left: 1%;
-    padding-right: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.profile {
+    background-color: #242427;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    height: 30px;
+    cursor: pointer;
+    font-family: 'roobertregular';
+    border: 1px solid white;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 20%
 }
 
 form {
@@ -62,14 +78,41 @@ form {
 
 .h3 {
     font-size: 16;
+    font-weight: normal;
 }
 
-.h5 {
-    font-size: 10
+body h5 {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+body h2 {
+    font-size: 22px;
+    font-weight: normal;
+}
+
+body h1 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+body p {
+    font-size: 14px;
+    font-weight: normal;
 }
 
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+}
+
+div.container {
+    background-color: darkgrey;
+    max-width: 20%;
+    border: 5px solid white;
+    padding: 10px;
+    margin: auto;
+    margin-top: 1%;
+    text-align: center;
 }
