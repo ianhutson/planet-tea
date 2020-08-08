@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'roobertregular';
+    src: url('roobert-regular-webfont.woff2') format('woff2'), url('roobert-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+    font-family: 'roobertregular';
+}
+
+.topnav {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 20p;
+    background-color: #606060;
+    font-family: 'roobertregular';
+}
+
+.left {
+    float: left;
+    vertical-align: middle;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.right {
+    float: right;
+    vertical-align: middle;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-right: 1px
+}
+
+.button {
+    background-color: #242427;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    height: 30px;
+    cursor: pointer;
+    font-family: 'roobertregular';
+    border: 1px solid white;
+    text-align: center;
+    margin: auto;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+form {
+    display: inline;
+}
+
+.button:hover {
+    background-color: #000000;
+    color: 242427;
+}
+
+.h3 {
+    font-size: 16;
+}
+
+.h5 {
+    font-size: 10
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}

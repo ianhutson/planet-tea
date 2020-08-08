@@ -19,6 +19,7 @@ class ReviewsController < ApplicationController
     post '/reviews' do
       if logged_in?
         if params[:name] == ""
+          flash[:no_name] = "Name field must not be blank."
           redirect to "/reviews/new"
         else
           @review = current_user.reviews.build(name: params[:name], color: params[:color], flavor: params[:flavor], tea_type: params[:tea_type], country: params[:country], supplier: params[:supplier], notes: params[:notes])

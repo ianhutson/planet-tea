@@ -1,15 +1,10 @@
 <h2><%= current_user.username %>'s Reviews: </h2>
 <% if current_user.reviews.all.length == 0%>
 No Reviews!  
-<form method="get" action="/reviews/new">
-<button type="submit" class="button">Create Review</button>
-  </form>
   <% else %>
 <% @reviews.each do |reviews| %>
     <div>
-    <a href="/reviews/<%= reviews.id%>">
-    
-    <%= reviews.name %>   
+    <a href="/reviews/<%= reviews.id%>" class="button"><%= reviews.name %></a>
     </div>
 
 <% end %>

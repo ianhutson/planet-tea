@@ -1,21 +1,42 @@
 <h2> Edit Review </h2>
 
 <form method="post" action="/reviews/<%=@review.id%>">
-  <input id="hidden" type="hidden" name="_method" value="PATCH">
+
+  <label for="name">Name: </label>
+  <br>
   <input type="text" name="name" value="<%= @review.name %>">
+  <br>
+  <label for="tea_type">Type: </label>
+  <br>
   <input type="text" name="tea_type" value="<%= @review.tea_type %>">
+  <br>
+  <label for="supplier">Supplier: </label>
+  <br>
   <input type="text" name="supplier" value="<%= @review.supplier %>">
+  <br>
+  <label for="country">Country: </label>
+  <br>
   <input type="text" name="country" value="<%= @review.country %>">
+  <br>
+  <label for="flavor">Flavor(s): </label>
+  <br>
   <input type="text" name="flavor" value="<%= @review.flavor %>">
+  <br>
+  <label for="color">Color: </label>
+  <br>
   <input type="text" name="color" value="<%= @review.color %>">
+  <br>
+  <label for="notes">Additional Notes: </label>
+  <br>
   <input type="text" name="notes" value="<%= @review.notes %>">
-  <input type="submit" value="submit">
-  
+  <br>
+  <br>
+  <input class="button" type="submit" value="Submit">
+  <br>
 </form>
 <form method="post" action="/reviews/<%=@review.id%>/delete">
 <button type="submit" name="_method" class="button" value="delete">Delete Review</button>
 </form>
-
 <form method="get" action="/reviews">
 <button type="submit" class="button">All Reviews</button>
 </form>

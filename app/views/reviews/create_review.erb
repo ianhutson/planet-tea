@@ -1,13 +1,37 @@
-<h2>Add a review</h2>
+<h2>Add a review:</h2>
 <form action="/reviews" method="POST">
-  <p>Name: <input type="text" name="name"></p>
-  <p>Type: <input type="text" name="tea_type"></p>
-  <p>Supplier: <input type="text" name="supplier"></p>
-  <p>Country: <input type="text" name="country"></p>
-  <p>Flavor: <input type="text" name="flavor"></p>
-  <p>Color: <input type="text" name="color"></p>
-  <p>Notes: <input type="text" name="notes"></p>
+  <label for="name">Name: </label>
+  <br>
+  <input type="text" name="name">
+  <br>
+  <label for="tea_type">Type: </label>
+  <br>
+  <input type="text" name="tea_type">
+  <br>
+  <label for="supplier">Supplier: </label>
+  <br>
+  <input type="text" name="supplier">
+  <br>
+  <label for="country">Country: </label>
+  <br>
+  <input type="text" name="country">
+  <br>
+  <label for="flavor">Flavor(s): </label>
+  <br>
+  <input type="text" name="flavor">
+  <br>
+  <label for="color">Color: </label>
+  <br>
+  <input type="text" name="color">
+  <br>
+  <label for="notes">Additional Notes: </label>
+  <br>
+  <input type="text" name="notes">
+  <br>
   <input class="button" type="submit" value="Submit">
 </form>
 
+<form method="get" action="/reviews">
+<button type="submit" class="button">All Reviews</button>
+</form>
 

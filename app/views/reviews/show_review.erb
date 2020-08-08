@@ -1,5 +1,6 @@
-<p>Name: <%= @review.name %> - Type: <%=@review.tea_type%> - Supplier: <%=@review.supplier%> - Country: <%=@review.country%></p>
-<p>Flavor: <%=@review.flavor%> - Color: <%=@review.color%></p>
+<h2>Name: <%= current_user.username %>'s <%= @review.name %> Review</h2>
+<p>Type: <%=@review.tea_type%> - Supplier: <%=@review.supplier%> - Country: <%=@review.country%></p>
+<p>Flavor(s): <%=@review.flavor%> - Color(s): <%=@review.color%></p>
 <p>Notes:  <%=@review.notes%>
 
 <form method="post" action="/reviews/<%=@review.id%>/delete">

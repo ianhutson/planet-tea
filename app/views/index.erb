@@ -1,7 +1,7 @@
-<h2>Planet Tea</h2>
 <% if logged_in? %>
 
   <p>Welcome, <%=current_user.username %>!</p>
+  <br>
   <form method="get" action="/reviews/new">
 <button type="submit" class="button">Create Review</button>
   </form>
@@ -11,21 +11,23 @@
   </form>
 
   <% else %>
-  <p>Please Login or Sign Up below:</p>
-  <h3>Login</h3>
+  <p>Welcome to Planet Tea! Please Login or Sign Up below:</p>
+  <h3>Log In</h3>
   <form method="post" action="/login">
-  Username: <input type="text" name="username" >
+  Username: <input type="text" name="username" maxlength="20" >
   <br>
-  Password: <input type="text" name="password">
+  Password: <input type="password" name="password">
   <br>
-  <input class="button" text="Login" type="submit" value="Submit">
+  <input class="button" text="Login" type="submit" value="Log In">
   </form>
 
-  <h4>Sign Up</h4>
+  <h3>Sign Up</h3>
   <form action="/signup" method="POST">
-  <p>Name: <input type="text" name="username"></p>
-  <p>Email: <input type="text" name="email"></p>
-  <p>Password: <input type="text" name="password"></p>
-   <input class="button" text="Sign Up" type="submit" value="Submit">
+  <h5>Username must only contain letters (either case), numbers, and underscore; Between 6 and 15 characters.</h5>
+  <p>Username: <input name="username" id="username" pattern="[A-Za-z0-9_]{6,15}"></p>
+  <p>Email:  <input type="email" id="email" name="email"
+  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+  <p>Password: <input type="password" name="password" minlength="6" required></p>
+   <input class="button" text="Sign Up" type="submit" value="Sign Up" >
 </form>
   <%end %>
