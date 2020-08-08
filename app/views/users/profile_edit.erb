@@ -1,26 +1,16 @@
 <div class="container">
 <h2>Edit Profile:</h2>
 
-<form method="post" action="/user/<%=current_user.id%>/edit">
-<label for="password">New Password: </label>
-  <br>
-  <input type="password" name="password" minlength="6" required>
-  <br>
-  <label for="confirm_password">Confirm Password: </label>
-  <br>
-  <input type="password" name="confirm_password" minlength="6" value="<%= @user.password %>"required >
-  <br><br>
-   <input class="button" type="submit" value="Change Password" required>
-   </form><br>
-   <%# <form method="post" action="/user/profile_edit">
-   <br>
+
+   <form method="post" action="/user/<%=current_user.id%>">
+   <input id="hidden" type="hidden" name="_method" value="PATCH">
   <label for="email">New Email: </label>
   <br>
-  <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+  <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" >
   <br>
   <label for="email">Confirm Email: </label>
   <br>
-  <input type="text" name="confirm_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+  <input type="text" name="confirm_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" >
   <br><br><input class="button" type="submit" value="Change Email">
-   </form> %>
+   </form>
 </div>

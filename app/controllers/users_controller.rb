@@ -30,6 +30,7 @@ class UsersController < ApplicationController
   
     post '/login' do
       user = User.find_by(:username => params[:username])
+      puts params
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
         redirect to "/reviews"
@@ -51,26 +52,34 @@ class UsersController < ApplicationController
         redirect to '/login'
       end
     end
-  
-    patch '/users/:id' do
+    
+    patch '/user/:id' do
       if logged_in?
-        if params[:name] == ""
+        if params[:email] == ""
           redirect to "/users/#{params[:id]}/edit"
+          flash[:change] = "Verify old email and ensure new one matches the confirm field."
         else
           @user = User.find_by_id(params[:id])
-          if @user == current_user && params[:password] == params[:confirm_password]
-            if @user.update(password: params[:password]) 
-              redirect to "/users/#{@user.id}"
+          if @user == current_user && params[:email] == params[:confirm_email]
+            if @user.update(email: params[:email]) 
+              puts params
+              redirect to "/"
             else
               redirect to "/users/#{@user.id}/edit"
+              flash[:change] = "Verify old email and ensure new one matches the confirm field."
             end
           else
-            redirect to '/users'
+            redirect to '/'
           end
         end
       else
         redirect to '/login'
       end
+    end
+
+    post '/user/:id' do
+     @user = User.find_by_id(params[:id])
+        erb :'index'
     end
 
     get '/logout' do

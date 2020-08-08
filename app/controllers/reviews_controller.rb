@@ -63,7 +63,7 @@ class ReviewsController < ApplicationController
         else
           @review = Review.find_by_id(params[:id])
           if @review && @review.user == current_user
-            if @review.update(name: params[:name])
+            if @review.update(name: params[:name], color: params[:color], flavor: params[:flavor], tea_type: params[:tea_type], country: params[:country], supplier: params[:supplier], notes: params[:notes])
               redirect to "/reviews/#{@review.id}"
             else
               redirect to "/reviews/#{@review.id}/edit"

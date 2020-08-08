@@ -1,7 +1,7 @@
 <div class="container">
 <% if logged_in? %>
 
-  <p>Welcome, <%=current_user.username %>!</p>
+  <h2>Welcome, <%=current_user.username %>!</h2>
   <br>
   <form method="get" action="/reviews/new">
 <button type="submit" class="button">Create Review</button>
@@ -19,9 +19,9 @@
   <h3>Log In:</h3>
   
   <form method="post" action="/login">
-  <label for="name">Username: </label>
+  <label for="username">Username: </label>
   <br>
-  <input type="text" name="name" maxlength="15">
+  <input type="text" name="username" maxlength="15">
   <br>
    <label for="password">Password: </label>
   <br>

@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <link rel="stylesheet" href="/css/application.css">
 </head>
-
 <body>
+  <div class="topnav">
+    <% if logged_in?%>
+    <div class="group">
+      <form class="left" method="get" action="/">
+        <button type="submit" class="button1">Home</button>
+      </form>
+      <div class="divider">
+      </div>
+      <form class="left" method="get" action="/users/<%=current_user.id%>/edit">
+        <button type="submit" class="button2">Profile</button>
+      </form>
+      </div>
+      <div class="solo">
+      <form class="right" action="/logout" method="get">
+        <button class="button2" name="logout">Logout</button>
+      </form>
+      </div>
+      <div class="title">Planet Tea 
+      </div>
+      <div class="user"><%=current_user.username%> - <%=current_user.email%>
+      </div>
+ </div>
+
+
+
+<%else%> 
 <div class="topnav">
-<% if logged_in?%>
-
-<form class="left" method="get" action="/">
-<button type="submit" class="button">Home</button>
-</form>
-
-<form class="left" method="get" action="/users/<%=current_user.id%>/edit">
-<button type="submit" class="profile">Profile</button>
-</form>
-
-<form style="margin-right:.25%"class="right" action="/logout" method="get">
-  <button class="button" name="logout">Logout</button>
-</form>
+<div class="title2" >Planet Tea</div>
+ </div></div>
 <%end%>
-<div style="text-align:center;width:100%;font-size:23px;padding-top:0;padding-bottom:0;padding-right:5%">Planet Tea</div>
 
-</div>
+<br>
 <br>
 <% flash.keys.each do |type| %>
   <div data-alert class="flash <%= type %> alert-box radius">
@@ -32,6 +44,8 @@
 <% end %>
 <br>
 <%= yield %>
-
+<br>
+<div class="footer">
+<img src="\images\tea.jpg"><div>
 </body>
 </html>

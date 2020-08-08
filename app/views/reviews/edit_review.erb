@@ -2,7 +2,7 @@
 <h2> Edit Review </h2>
 
 <form method="post" action="/reviews/<%=@review.id%>">
-
+<input id="hidden" type="hidden" name="_method" value="PATCH">
   <label for="name">Name: </label>
   <br>
   <input type="text" name="name" value="<%= @review.name %>">
@@ -29,7 +29,7 @@
   <br>
   <label for="notes">Additional Notes: </label>
   <br>
- <textarea type="text" name="notes" rows="14" cols="22" wrap="soft" maxlength="1000" value="<%= @review.notes %>"></textarea>
+ <textarea type="text" name="notes" rows="14" cols="22" wrap="soft" maxlength="1000"><%= @review.notes %></textarea>
   <br>
   <br>
   <input class="button" type="submit" value="Submit">

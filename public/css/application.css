@@ -15,12 +15,13 @@ body {
 
 .topnav {
     top: 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
-    height: 20p;
+    height: 50p;
     background-color: #606060;
     font-family: 'roobertregular';
     font-weight: bold;
+    text-align: center;
 }
 
 .left {
@@ -35,7 +36,8 @@ body {
     vertical-align: middle;
     padding-top: 1px;
     padding-bottom: 1px;
-    padding-right: 1px
+    padding-right: 12px;
+    margin-right: 1.5%
 }
 
 .button {
@@ -48,8 +50,39 @@ body {
     font-family: 'roobertregular';
     border: 1px solid white;
     text-align: center;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.button1 {
+    background-color: #242427;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    height: 30px;
+    cursor: pointer;
+    font-family: 'roobertregular';
+    border: 1px solid white;
+    text-align: center;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-top: 20%
+}
+
+.button2 {
+    background-color: #242427;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    height: 30px;
+    cursor: pointer;
+    font-family: 'roobertregular';
+    border: 1px solid white;
+    text-align: center;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-left: 45%;
+    margin-top: 20%
 }
 
 .profile {
@@ -114,5 +147,45 @@ div.container {
     padding: 10px;
     margin: auto;
     margin-top: 1%;
+    text-align: center;
+}
+
+div.user {
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-weight: normal;
+    margin-right: 5%
+}
+
+div.title {
+    text-align: center;
+    font-size: 23px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 5%
+}
+
+div.title2 {
+    text-align: center;
+    font-size: 23px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+img {
+    height: auto;
+    width: auto;
+    max-width: 5%;
+    text-align: center
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
     text-align: center;
 }
