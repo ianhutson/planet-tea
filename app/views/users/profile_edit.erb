@@ -12,5 +12,16 @@
   <br>
   <input type="text" name="confirm_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" >
   <br><br><input class="button" type="submit" value="Change Email">
+   </form><br>
+ <form method="post" action="/user/<%=current_user.id%>">
+   <input id="hidden" type="hidden" name="_method" value="PATCH">
+   <label for="photo">Select a profile pic:</label>
+   <br><br>
+  <div class="button2">
+   <%arr = ['bobby', 'flower', 'green tea', 'heart', 'tbag','tree']%>
+   <%arr.each do |name|%>
+   <button type="submit" name="photo" value="\images\<%=name%>.jpg"> <img src="\images\<%=name%>.jpg" style="max-width:50px" ></button>
+   <%end%></div>
+   <br><br>
    </form>
 </div>

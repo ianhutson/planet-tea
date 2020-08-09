@@ -12,7 +12,7 @@ class UsersController < ApplicationController
         flash[:signup] = "Please enter a valid username, email, and password."
         redirect to '/'
       else
-        @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
+        @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password], :photo => '\images\heart.jpg')
         @user.save
         session[:user_id] = @user.id
         redirect to '/reviews'
@@ -60,13 +60,17 @@ class UsersController < ApplicationController
           flash[:change] = "Verify old email and ensure new one matches the confirm field."
         else
           @user = User.find_by_id(params[:id])
-          if @user == current_user && params[:email] == params[:confirm_email]
+          if @user == current_user && params[:email] == params[:confirm_email] && params[:email] != nil
+            puts params
             if @user.update(email: params[:email]) 
-              puts params
               redirect to "/"
             else
               redirect to "/users/#{@user.id}/edit"
               flash[:change] = "Verify old email and ensure new one matches the confirm field."
+            end
+          elsif params[:photo] != ""
+            if @user.update(photo: params[:photo]) 
+              redirect to "/"
             end
           else
             redirect to '/'
