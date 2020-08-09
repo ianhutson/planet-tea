@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'roobertregular';
-    src: url('\fonts\roobert-regular-webfont.woff2') format('woff2'), url('\fonts\roobert-regular-webfont.woff') format('woff');
+    src: url('roobert-regular-webfont.woff2') format('woff2'), url('roobert-regular-webfont.woff2') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
     background-color: #ffc7c6;
-    color: white;
+    color: black;
     overflow-x: hidden;
     font-family: 'roobertregular';
     font-weight: normal;
@@ -17,96 +17,58 @@ body {
     top: 0;
     position: fixed;
     width: 100%;
-    height: 50p;
-    background-color: #606060;
+    height: 300p;
+    background-color: #FFc913;
     font-family: 'roobertregular';
     font-weight: bold;
     text-align: center;
 }
 
-.left {
-    float: left;
-    vertical-align: middle;
-    padding-top: 1px;
-    padding-bottom: 1px;
-}
-
-.right {
-    float: right;
-    vertical-align: middle;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    padding-right: 12px;
-    margin-right: 1.5%
-}
-
 .button {
-    background-color: #242427;
+    background-color: #5DADE2;
     color: white;
     text-decoration: none;
     font-size: 16px;
     height: 30px;
     cursor: pointer;
     font-family: 'roobertregular';
-    border: 1px solid white;
+    border: 1px solid black;
     text-align: center;
     padding-left: 15%;
     padding-right: 15%;
 }
 
 .button1 {
-    background-color: #242427;
+    background-color: #5DADE2;
     color: white;
     text-decoration: none;
     font-size: 16px;
-    height: 30px;
+    height: 25px;
     cursor: pointer;
     font-family: 'roobertregular';
-    border: 1px solid white;
+    border: 1px solid black;
     text-align: center;
-    padding-left: 15%;
-    padding-right: 15%;
-    margin-top: 20%
-}
-
-.button2 {
-    background-color: #242427;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    height: 30px;
-    cursor: pointer;
-    font-family: 'roobertregular';
-    border: 1px solid white;
-    text-align: center;
-    padding-left: 15%;
-    padding-right: 15%;
-    margin-left: 45%;
-    margin-top: 20%
-}
-
-.profile {
-    background-color: #242427;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    height: 30px;
-    cursor: pointer;
-    font-family: 'roobertregular';
-    border: 1px solid white;
-    text-align: center;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-left: 20%
-}
-
-form {
-    display: inline;
+    width: 15%;
+    float: left;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 1%;
 }
 
 .button:hover {
     background-color: #000000;
     color: 242427;
+}
+
+.button1:hover {
+    background-color: #000000;
+    color: 242427;
+}
+
+.divider {
+    border-right: 10px solid #FFc913;
+    height: 1px;
+    float: left
 }
 
 .h3 {
@@ -141,36 +103,39 @@ body p {
 }
 
 div.container {
-    background-color: darkgrey;
+    background-color: #FFc913;
     max-width: 20%;
-    border: 5px solid white;
+    border: 5px solid black;
     padding: 10px;
     margin: auto;
     margin-top: 1%;
     text-align: center;
 }
 
-div.user {
+.left {
+    max-width: 22.5%;
+}
+
+.mid {
+    margin-right: 40%;
+    margin-left: 40%;
+    max-width: 50%
+}
+
+.user {
+    float: right;
     text-align: center;
     padding-top: 0;
     padding-bottom: 0;
     font-weight: normal;
-    margin-right: 5%
 }
 
-div.title {
+.title {
     text-align: center;
     font-size: 23px;
     padding-top: 0;
     padding-bottom: 0;
-    margin-right: 5%
-}
-
-div.title2 {
-    text-align: center;
-    font-size: 23px;
-    padding-top: 0;
-    padding-bottom: 0;
+    margin: auto;
 }
 
 img {

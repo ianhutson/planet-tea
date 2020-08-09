@@ -4,36 +4,34 @@
 <link rel="stylesheet" href="/css/application.css">
 </head>
 <body>
-  <div class="topnav">
+
     <% if logged_in?%>
-    <div class="group">
-      <form class="left" method="get" action="/">
+  <div class="topnav">
+  <div class="left">
+      <form  method="get" action="/">
         <button type="submit" class="button1">Home</button>
       </form>
       <div class="divider">
       </div>
-      <form class="left" method="get" action="/users/<%=current_user.id%>/edit">
-        <button type="submit" class="button2">Profile</button>
+      <form  method="get" action="/users/<%=current_user.id%>/edit">
+        <button type="submit" class="button1">Profile</button>
+      </form>
+     <div class="divider">
+      </div>
+      <form  action="/logout" method="get">
+        <button class="button1" name="logout">Logout</button>
       </form>
       </div>
-      <div class="solo">
-      <form class="right" action="/logout" method="get">
-        <button class="button2" name="logout">Logout</button>
-      </form>
-      </div>
+      <div class="user"><p>User:<%=current_user.username%></p><p>Email: <%=current_user.email%></p>
+    </div><div class="mid">
       <div class="title">Planet Tea 
-      </div>
-      <div class="user"><%=current_user.username%> - <%=current_user.email%>
-      </div>
- </div>
-
-
-
-<%else%> 
+      </div></div>
+  </div>
+  <%else%> 
 <div class="topnav">
-<div class="title2" >Planet Tea</div>
+<div class="title" >Planet Tea</div>
  </div></div>
-<%end%>
+  <%end%>
 
 <br>
 <br>
