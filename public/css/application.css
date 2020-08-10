@@ -17,7 +17,7 @@ body {
     top: 0;
     position: fixed;
     width: 100%;
-    height: 300p;
+    height: 50p;
     background-color: #FFc913;
     font-family: 'roobertregular';
     font-weight: bold;
@@ -140,6 +140,12 @@ div.container {
     padding-top: 1%;
     padding-bottom: 0;
     margin: auto;
+}
+
+.title2 {
+    text-align: center;
+    font-size: 23px;
+    padding-bottom: 0;
 }
 
 img {

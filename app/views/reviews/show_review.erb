@@ -1,27 +1,28 @@
 <div class="container">
 
-<h2><%= current_user.username %>'s Review of ~<%= @review.name %>~ </h2>
+<h2><%= current_user.username %>'s Review of </h2>
+<h2 style="color:#5de264"><%= @review.name %> </h2>
 <br>
-<p>Type: <%=@review.tea_type%></p>
+<p style="text-align:left">Type: <%=@review.tea_type%></p>
 <br>
-<p>Supplier: <%=@review.supplier%></p> 
+<p style="text-align:left">Supplier: <%=@review.supplier%></p> 
 <br>
-<p>Country: <%=@review.country%></p>
+<p style="text-align:left">Country: <%=@review.country%></p>
 <br>
-<p>Flavor(s): <%=@review.flavor%></p>
+<p style="text-align:left">Flavor(s): <%=@review.flavor%></p>
 <br>
-<p>Color(s): <%=@review.color%></p>
+<p style="text-align:left">Color(s): <%=@review.color%></p>
 <br>
-<p>Notes: <%=@review.notes%></p>
+<p style="text-align:left">Notes: <%=@review.notes%></p>
 <br>
 <form method="post" action="/reviews/<%=@review.id%>/delete">
 <button type="submit" name="_method" class="button" value="delete">Delete Review</button>
 </form>
-<br><br>
+<br>
 <form method="get" action="/reviews/<%=@review.id%>/edit">
 <button type="submit" class="button">Edit Review</button>
 </form>
-<br><br>
+<br>
 <form method="get" action="/reviews">
 <button type="submit" class="button">All Reviews</button>
 </form>
