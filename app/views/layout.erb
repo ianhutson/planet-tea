@@ -8,19 +8,19 @@
   <% if logged_in?%>
   <div class="topnav">
   <div class="left">
-      <form  method="get" action="/">
-        <button type="submit" class="button1">Home</button>
-      </form>
+      <a  class="button1" href="/reviews"
+        type="submit" >Home
+      </a>
       <div class="divider">
       </div>
-      <form  method="get" action="/users/<%=current_user.id%>/edit">
-        <button type="submit" class="button1">Profile</button>
-      </form>
+      <a href="/users/<%=current_user.id%>/edit"
+        type="submit" class="button1">Profile
+      </a>
      <div class="divider">
       </div>
-      <form  action="/logout" method="get">
-        <button class="button1" name="logout">Logout</button>
-      </form>
+      <a class="button1" href="/logout"
+        type="submit" >Logout
+      </a>
       </div>
       <div style="text-align:left" class="user"><p>User: <%=current_user.username%></p><p>Email: <%=current_user.email%></p>
     </div><img src='<%=current_user.photo%>' style="max-width:40px; float:right;margin-right:1%"><div class="mid">
