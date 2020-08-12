@@ -13,15 +13,17 @@ class UsersController < ApplicationController
         redirect to '/'
       else
         @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password], :photo => '\images\heart.jpg')
-        @user.save
+        if @user.save
         session[:user_id] = @user.id
-        redirect to '/reviews'
+        else 
+        flash[:taken] = "Username taken."
+        redirect to '/login'
+        end
       end
     end
   
     get '/login' do
       if !logged_in?
-        flash[:login] = "Invalid credentials."
         erb :'index'
       else
         redirect to '/reviews'
@@ -30,7 +32,6 @@ class UsersController < ApplicationController
   
     post '/login' do
       user = User.find_by(:username => params[:username])
-      puts params
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
         redirect to "/reviews"
