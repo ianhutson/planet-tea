@@ -25,3 +25,5 @@ Confirm
 
 1. Button css due to a:visited in css.
 2. redirect is a ruby thing, changed to redirect_login & created redirect_review
+3. fixed rack bug by adding a missing line of code
+4. fixed ?s

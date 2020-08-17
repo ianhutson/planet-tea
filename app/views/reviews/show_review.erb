@@ -15,15 +15,15 @@
 <br>
 <p style="text-align:left">Notes: <%=@review.notes%></p>
 <br>
-<form method="post" action="/reviews/<%=@review.id%>/delete">
-<button type="submit" name="_method" class="button" value="delete">Delete Review</button>
-</form>
-<br>
-<form method="get" action="/reviews/<%=@review.id%>/edit">
-<button type="submit" class="button">Edit Review</button>
-</form>
-<br>
-<form method="get" action="/reviews">
-<button type="submit" class="button">All Reviews</button>
-</form>
+<a href="/reviews/<%=@review.id%>/delete"
+        type="submit" class="button">Delete Review
+      </a>
+<br><br>
+<a href="/reviews/<%=@review.id%>/edit"
+type="submit" class="button">Edit Review
+      </a>
+<br><br>
+<a href="/reviews"
+        type="submit" class="button">All Reviews
+      </a>
 </div>

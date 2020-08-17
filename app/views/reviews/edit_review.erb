@@ -35,11 +35,12 @@
   <input class="button" type="submit" value="Submit">
   <br>
 </form><br>
-<form method="post" action="/reviews/<%=@review.id%>/delete">
-<button type="submit" name="_method" class="button" value="delete">Delete Review</button>
-</form>
-<br>
-<form method="get" action="/reviews">
-<button type="submit" class="button">All Reviews</button>
-</form>
+
+<a href="/reviews"
+        type="submit" class="button">All Reviews
+      </a>
+      <br><br>
+<a href="/reviews/<%=@review.id%>/delete"
+        type="submit" class="button">Delete Review
+      </a>
 </div>
