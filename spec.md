@@ -18,3 +18,10 @@ Confirm
 - [x] Your commit messages are meaningful
 - [x] You made the changes in a commit that relate to the commit message
 - [x] You don't include changes in a commit that aren't related to the commit message
+
+
+- refactor with redirect method
+- fix rack issue
+
+1. Button css due to a:visited in css.
+2. redirect is a ruby thing, changed to redirect_login & created redirect_review

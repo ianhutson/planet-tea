@@ -15,10 +15,12 @@ class UsersController < ApplicationController
         @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password], :photo => '\images\heart.jpg')
         if @user.save
         session[:user_id] = @user.id
+        redirect to "/reviews"
         else 
         flash[:taken] = "Username taken."
         redirect to '/login'
         end
+  
       end
     end
   
@@ -42,20 +44,17 @@ class UsersController < ApplicationController
     end
 
     get '/users/:id/edit' do
-      if logged_in?
+      redirect
         @user = User.find_by_id(params[:id])
         if @user == current_user
           erb :'users/profile_edit'
         else
           redirect to '/'
         end
-      else
-        redirect to '/login'
-      end
     end
     
     patch '/user/:id' do
-      if logged_in?
+      redirect
         if params[:email] == ""
           redirect to "/users/#{params[:id]}/edit"
           flash[:change] = "Verify old email and ensure new one matches the confirm field."
@@ -77,9 +76,6 @@ class UsersController < ApplicationController
             redirect to '/'
           end
         end
-      else
-        redirect to '/login'
-      end
     end
 
     post '/user/:id' do

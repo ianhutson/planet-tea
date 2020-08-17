@@ -1,23 +1,17 @@
 class ReviewsController < ApplicationController
     get '/reviews' do
-      if logged_in?
-        @reviews = current_user.reviews.all
-        erb :'reviews/reviews'
-      else
-        redirect to '/login'
-      end
+      redirect_login
+      @reviews = current_user.reviews.all
+      erb :'reviews/reviews'
     end
   
     get '/reviews/new' do
-      if logged_in?
-        erb :'reviews/create_review'
-      else
-        redirect to '/login'
-      end
+      redirect_login
+      erb :'reviews/create_review'
     end
   
     post '/reviews' do
-      if logged_in?
+      redirect_login
         if params[:name] == ""
           flash[:no_name] = "Name field must not be blank."
           redirect to "/reviews/new"
@@ -29,31 +23,22 @@ class ReviewsController < ApplicationController
             redirect to "/reviews/new"
           end
         end
-      else
-        redirect to '/login'
-      end
     end
   
     get '/reviews/:id' do
-      if logged_in?
-        @review = Review.find_by_id(params[:id])
-        erb :'reviews/show_review'
-      else
-        redirect to '/login'
-      end
+      redirect_login
+      @review = Review.find_by_id(params[:id])
+      erb :'reviews/show_review'
     end
   
     get '/reviews/:id/edit' do
-      if logged_in?
+      redirect_login
         @review = Review.find_by_id(params[:id])
         if @review && @review.user == current_user
           erb :'reviews/edit_review'
         else
           redirect to '/reviews'
-        end
-      else
-        redirect to '/login'
-      end
+        end  
     end
   
     patch '/reviews/:id' do
@@ -72,21 +57,16 @@ class ReviewsController < ApplicationController
             redirect to '/reviews'
           end
         end
-      else
-        redirect to '/login'
       end
     end
   
     delete '/reviews/:id/delete' do
-      if logged_in?
+      redirect_login
         @review = Review.find_by_id(params[:id])
         if @review && @review.user == current_user
           @review.delete
         end
         redirect to '/reviews'
-      else
-        redirect to '/login'
-      end
     end
   end
   
